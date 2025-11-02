@@ -1,0 +1,12 @@
+data_example.json
+first_test.py
+full_text_example.txt
+
+.env
+*.env
+__pycache__/
+*.pyc
+
+/dist
+/build
+ui.spec

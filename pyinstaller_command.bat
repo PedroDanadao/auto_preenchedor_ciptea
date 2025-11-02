@@ -1,0 +1,1 @@
+pyinstaller --onefile --windowed ui.py
