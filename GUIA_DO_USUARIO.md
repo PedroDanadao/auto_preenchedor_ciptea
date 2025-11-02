@@ -49,7 +49,7 @@ A API Key é uma chave que permite ao programa usar a Inteligência Artificial d
 
 ### Como Configurar no Programa:
 
-![alt text](guide_images/config_api_key.png)
+![alt text](guide_images/api_key.png)
 
 **Método 1: Pelo Menu (Recomendado)**
 
