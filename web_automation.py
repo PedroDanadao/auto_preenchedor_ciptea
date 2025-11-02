@@ -140,7 +140,7 @@ def fill_cipteape_form(driver, data, file_paths, primeira_via=True):
     nome_menor_field.send_keys(data.get("nome_do_menor", ""))
 
     cpf_menor_field = driver.find_element(By.NAME, "CpfBeneficiario")
-    cpf_menor_field.send_keys(data.get("cpf_do_responsavel", ""))
+    cpf_menor_field.send_keys(data.get("cpf_do_menor", ""))
 
     rg_menor_field = driver.find_element(By.NAME, "RgfBeneficiario")
     rg_menor_field.send_keys(data.get("rg_do_menor", ""))
@@ -151,13 +151,13 @@ def fill_cipteape_form(driver, data, file_paths, primeira_via=True):
     data_de_nascimento_field.send_keys(data_de_nascimento)
 
     email_field = driver.find_element(By.NAME, "EmailBeneficiario")
-    email_field.send_keys(data.get("email", "test_email.com"))
+    email_field.send_keys(data.get("email", ""))
 
     telefone_field = driver.find_element(By.NAME, "TelefoneBeneficiario")
-    telefone_field.send_keys(data.get("telefone", "123456789"))
+    telefone_field.send_keys(data.get("telefone", ""))
 
     cep_field = driver.find_element(By.NAME, "CepBeneficiario")
-    cep_field.send_keys(data.get("cep", "12345-678"))
+    cep_field.send_keys(data.get("cep", ""))
 
     endereco = data.get("endereço", "")
     endereco = endereco.replace(", ", " N ")
