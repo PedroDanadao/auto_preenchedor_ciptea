@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Usuário - Auto Preenchedor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        h2 {
+            color: #1e3c72;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #2a5298;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        h4 {
+            color: #4a5568;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            border: 1px solid #ffc107;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+            border: 1px solid #28a745;
+        }
+
+        .info {
+            background: #d1ecf1;
+            border-left-color: #17a2b8;
+            border: 1px solid #17a2b8;
+        }
+
+        .danger {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            margin: 30px 0 20px 0;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .doc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .doc-item {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .doc-item.optional {
+            border-color: #6c757d;
+            opacity: 0.8;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e9ecef;
+            margin: 30px 0;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            color: #1e3c72;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .doc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Guia do Usuário</h1>
+            <p>Auto Preenchedor de Formulários CIPTEA e Intermunicipal</p>
+        </header>
+
+        <div class="content">
+            <!-- Índice -->
+            <div class="toc">
+                <h3>📑 Índice</h3>
+                <ul>
+                    <li><a href="#o-que-e">O que é este programa?</a></li>
+                    <li><a href="#documentos">Documentos Necessários</a></li>
+                    <li><a href="#passo-a-passo">Passo a Passo</a>
+                        <ul>
+                            <li><a href="#passo1">Passo 1: Adicionar Documentos</a></li>
+                            <li><a href="#passo2">Passo 2: Conferir e Corrigir os Dados</a></li>
+                            <li><a href="#passo3">Passo 3: Marcar os CIDs</a></li>
+                            <li><a href="#passo4">Passo 4: Escolher os Formulários</a></li>
+                            <li><a href="#passo5">Passo 5: Preencher os Formulários</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#nova-entrada">Começar Novo Preenchimento</a></li>
+                    <li><a href="#ver-pasta">Ver os Documentos Organizados</a></li>
+                    <li><a href="#problemas">Problemas Comuns</a></li>
+                    <li><a href="#dicas">Dicas Importantes</a></li>
+                    <li><a href="#checklist">Checklist Rápido</a></li>
+                </ul>
+            </div>
+
+            <!-- O que é este programa? -->
+            <section id="o-que-e">
+                <h2>📋 O que é este programa?</h2>
+                <p>O <strong>Auto Preenchedor</strong> preenche automaticamente formulários de CIPTEA e Passe Intermunicipal usando Inteligência Artificial. Você só precisa fornecer os documentos digitalizados!</p>
+            </section>
+
+            <hr>
+
+            <!-- Documentos Necessários -->
+            <section id="documentos">
+                <h2>📸 Documentos Necessários</h2>
+                <p>Prepare fotos ou digitalizações dos seguintes documentos:</p>
+
+                <h3>✅ Obrigatórios</h3>
+                <div class="doc-list">
+                    <div class="doc-item">
+                        <strong>CPF do Beneficiário</strong><br>
+                        <small>(menor de idade)</small>
+                    </div>
+                    <div class="doc-item">
+                        <strong>Foto 3x4</strong><br>
+                        <small>do beneficiário</small>
+                    </div>
+                    <div class="doc-item">
+                        <strong>CPF do Responsável</strong>
+                    </div>
+                    <div class="doc-item">
+                        <strong>Laudo Médico</strong>
+                    </div>
+                    <div class="doc-item">
+                        <strong>Comprovante de Residência</strong>
+                    </div>
+                </div>
+
+                <h3>⭕ Opcionais</h3>
+                <div class="doc-list">
+                    <div class="doc-item optional">
+                        RG do Beneficiário
+                    </div>
+                    <div class="doc-item optional">
+                        RG do Responsável
+                    </div>
+                    <div class="doc-item optional">
+                        VEM (Vale Eletrônico Municipal)
+                    </div>
+                </div>
+
+                <div class="card info">
+                    <strong>💡 Dica:</strong> Use o celular para tirar fotos claras dos documentos!
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Passo a Passo -->
+            <section id="passo-a-passo">
+                <h2>🚀 Passo a Passo</h2>
+
+                <!-- Passo 1 -->
+                <div id="passo1" class="step">
+                    Passo 1️⃣: Adicionar Documentos
+                </div>
+
+                <img src="guide_images/tela_inicial.png" alt="Tela Inicial">
+
+                <ol>
+                    <li><strong>Abra o programa</strong> (clique duas vezes no ícone)</li>
+                    <li><strong>Digite o nome completo do beneficiário</strong> no campo no topo</li>
+                    <li><strong>Adicione os documentos:</strong>
+                        <ul>
+                            <li>Arraste as fotos para as caixas correspondentes, <strong>OU</strong></li>
+                            <li>Clique nas caixas e selecione os arquivos</li>
+                        </ul>
+                    </li>
+                    <li><strong>Observe os asteriscos vermelhos (*)</strong> - estes documentos são obrigatórios!</li>
+                    <li><strong>Acompanhe o contador:</strong> 
+                        <ul>
+                            <li>"5/8 documentos carregados" significa que você já adicionou 5 documentos</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clique em "Próximo: Extração de Dados ➜"</strong></li>
+                </ol>
+
+                <div class="card warning">
+                    <strong>⚠️ Importante:</strong> Não feche o programa enquanto estiver processando!
+                </div>
+
+                <!-- Passo 2 -->
+                <div id="passo2" class="step">
+                    Passo 2️⃣: Conferir e Corrigir os Dados
+                </div>
+
+                <img src="guide_images/checagem_de_dados.png" alt="Checagem de Dados">
+
+                <p><strong>O computador vai ler os documentos automaticamente!</strong> Isso pode levar alguns minutos.</p>
+
+                <h4>Aguarde enquanto o sistema:</h4>
+                <ol>
+                    <li>⏳ Organiza os documentos</li>
+                    <li>⏳ Lê os textos das imagens</li>
+                    <li>⏳ Preenche os campos automaticamente</li>
+                </ol>
+
+                <h4>Revise TODOS os dados:</h4>
+
+                <div class="card">
+                    <h4>Dados do Responsável:</h4>
+                    <ul>
+                        <li>✏️ Nome do Responsável</li>
+                        <li>✏️ CPF (formato: 000.000.000-00)</li>
+                        <li>✏️ RG</li>
+                    </ul>
+
+                    <h4>Dados do Beneficiário:</h4>
+                    <ul>
+                        <li>✏️ Nome do Beneficiário</li>
+                        <li>✏️ Nome da Mãe</li>
+                        <li>✏️ CPF (formato: 000.000.000-00)</li>
+                        <li>✏️ RG</li>
+                        <li>📅 Data de Nascimento (DD/MM/AAAA)</li>
+                    </ul>
+
+                    <h4>Contato e Endereço:</h4>
+                    <ul>
+                        <li>🏠 Endereço (Rua e Número)</li>
+                        <li>📮 CEP (formato: 00000-000)</li>
+                        <li>📱 Telefone (formato: (81) 9 9999-9999)</li>
+                        <li>📧 E-mail</li>
+                    </ul>
+                </div>
+
+                <div class="card info">
+                    <strong>💡 Dica:</strong> Os campos formatam sozinhos enquanto você digita! Os nomes ficam em MAIÚSCULAS automaticamente.
+                </div>
+
+                <div class="card danger">
+                    <strong>⚠️ MUITO IMPORTANTE:</strong> Corrija qualquer erro! O computador pode errar na leitura. <strong>Confira tudo com atenção!</strong>
+                </div>
+
+                <!-- Passo 3 -->
+                <div id="passo3" class="step">
+                    Passo 3️⃣: Marcar os CIDs
+                </div>
+
+                <img src="guide_images/cids.png" alt="Seleção de CIDs">
+
+                <ol>
+                    <li><strong>Role a página para baixo</strong> até ver "CIDs - Selecione todos os aplicáveis"</li>
+                    <li><strong>Marque TODOS os CIDs</strong> que aparecem no laudo médico
+                        <ul>
+                            <li>Lado esquerdo: CID-10 (F84.0, F84.1, etc.)</li>
+                            <li>Lado direito: CID-11 (6A02.0, 6A02.1, etc.)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Não tem certeza?</strong> Olhe no laudo médico e marque exatamente o que está escrito lá</li>
+                </ol>
+
+                <div class="card info">
+                    <strong>💡 Dica:</strong> O programa tenta marcar automaticamente, mas sempre confira!
+                </div>
+
+                <!-- Passo 4 -->
+                <div id="passo4" class="step">
+                    Passo 4️⃣: Escolher os Formulários
+                </div>
+
+                <img src="guide_images/formularios.png" alt="Escolha de Formulários">
+
+                <p>Marque quais formulários você quer preencher:</p>
+
+                <div class="card">
+                    <h4>📋 CIPTEA Primeira Via</h4>
+                    <ul>
+                        <li>✅ Já vem marcado</li>
+                        <li>Use para: <strong>Primeira carteirinha</strong> do beneficiário</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>📋 CIPTEA Segunda Via</h4>
+                    <ul>
+                        <li>⬜ Vem desmarcado</li>
+                        <li>Use para: <strong>Renovar</strong> ou pedir segunda via da carteirinha</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🚌 Intermunicipal</h4>
+                    <ul>
+                        <li>✅ Já vem marcado</li>
+                        <li>Use para: <strong>Passe de ônibus intermunicipal</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🎫 Usar Documento VEM</h4>
+                    <ul>
+                        <li>⬜ Só aparece se você marcou "Intermunicipal"</li>
+                        <li>Marque <strong>SOMENTE</strong> se você enviou o documento VEM no Passo 1</li>
+                    </ul>
+                </div>
+
+                <div class="card warning">
+                    <strong>⚠️ MUITO IMPORTANTE:</strong> Role até o FINAL da página! O botão "Próximo" só funciona quando você chega no fim.
+                </div>
+
+                <!-- Passo 5 -->
+                <div id="passo5" class="step">
+                    Passo 5️⃣: Preencher os Formulários
+                </div>
+
+                <img src="guide_images/web_forms.png" alt="Formulários Web">
+
+                <ol>
+                    <li><strong>Clique em "Próximo: Preencher Formulários ➜"</strong></li>
+                    <li><strong>Aguarde!</strong> O programa vai:
+                        <ul>
+                            <li>⏳ Abrir o navegador</li>
+                            <li>⏳ Acessar os sites</li>
+                            <li>⏳ Preencher todos os campos</li>
+                            <li>⏳ Anexar todos os documentos</li>
+                        </ul>
+                        <p><strong>Isso pode levar alguns minutos!</strong></p>
+                    </li>
+                    <li><strong>Quando aparecer a mensagem "Preenchimento Concluído":</strong>
+                        <ul>
+                            <li>✅ O navegador vai estar aberto com as páginas</li>
+                            <li>✅ A maioria dos campos estarão preenchidos</li>
+                            <li>✅ Todos os documentos anexados</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="card danger">
+                    <h4>⚠️ MUITO IMPORTANTE - CONFIRA CADA CAMPO:</h4>
+                    <ul>
+                        <li>✏️ <strong>Alguns campos podem ficar em branco</strong> - o programa não consegue preencher todos automaticamente</li>
+                        <li>🔍 <strong>Revise CAMPO POR CAMPO</strong> em cada aba do navegador</li>
+                        <li>✏️ <strong>Preencha manualmente</strong> qualquer campo que estiver vazio</li>
+                        <li>✅ Verifique se os dados preenchidos estão corretos</li>
+                    </ul>
+                </div>
+
+                <ol start="5">
+                    <li><strong>Só depois de conferir tudo, clique nos botões de enviar</strong> em cada formulário</li>
+                </ol>
+
+                <div class="card warning">
+                    <p><strong>⚠️ ATENÇÃO:</strong> O programa NÃO envia automaticamente! Você precisa clicar em "Enviar" em cada aba.</p>
+                    <p><strong>⚠️ CAMPOS EM BRANCO:</strong> É normal que alguns campos fiquem vazios. Preencha-os manualmente antes de enviar!</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Nova Entrada -->
+            <section id="nova-entrada">
+                <h2>🔄 Começar Novo Preenchimento</h2>
+                
+                <img src="guide_images/nova_entrada.png" alt="Nova Entrada">
+
+                <p>Se você precisa preencher para outra pessoa:</p>
+
+                <ol>
+                    <li>Clique em <strong>"🔄 Nova Entrada"</strong> (botão vermelho)</li>
+                    <li>Confirme que quer apagar tudo</li>
+                    <li>Comece do zero!</li>
+                </ol>
+
+                <div class="card danger">
+                    <strong>⚠️ CUIDADO:</strong> Isso apaga TUDO! Só clique se tiver certeza.
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Ver Pasta -->
+            <section id="ver-pasta">
+                <h2>📁 Ver os Documentos Organizados</h2>
+                
+                <img src="guide_images/abrir_pasta.png" alt="Abrir Pasta">
+
+                <p>Quer ver onde ficaram salvos os documentos?</p>
+
+                <ol>
+                    <li>Clique em <strong>"📁 Abrir Pasta"</strong> (canto superior esquerdo)</li>
+                    <li>A pasta vai abrir com:
+                        <ul>
+                            <li>✅ Todos os documentos</li>
+                            <li>✅ Versões em PDF</li>
+                            <li>✅ Informações extraídas</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <p><strong>Localização:</strong> <code>C:\Users\SeuNome\.auto_preenchedor_data\nome_do_beneficiario</code></p>
+            </section>
+
+            <hr>
+
+            <!-- Problemas Comuns -->
+            <section id="problemas">
+                <h2>❗ Problemas Comuns</h2>
+
+                <div class="card">
+                    <h3>"O botão Próximo não funciona!"</h3>
+                    <p><strong>Solução:</strong> Role a página até o FINAL! O botão só fica verde quando você chega no fim.</p>
+                </div>
+
+                <div class="card">
+                    <h3>"Os dados estão errados!"</h3>
+                    <p><strong>Solução:</strong></p>
+                    <ul>
+                        <li>✏️ Corrija manualmente digitando nos campos</li>
+                        <li>📸 Da próxima vez, tire fotos mais claras dos documentos</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>"Faltam documentos!"</h3>
+                    <p><strong>Solução:</strong></p>
+                    <ul>
+                        <li>🔴 Verifique se enviou todos com asterisco vermelho (*)</li>
+                        <li>✅ Os sem asterisco são opcionais</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>"O programa travou!"</h3>
+                    <p><strong>Solução:</strong></p>
+                    <ul>
+                        <li>⏳ Aguarde pelo menos 5 minutos</li>
+                        <li>🔄 Se realmente travou, feche e abra novamente</li>
+                        <li>📁 Seus dados ficam salvos na pasta</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>"Não consigo anexar o VEM!"</h3>
+                    <p><strong>Solução:</strong></p>
+                    <ul>
+                        <li>✅ Certifique-se que adicionou a foto do VEM no Passo 1</li>
+                        <li>✅ Marque a opção "↳ Usar Documento VEM" no Passo 4</li>
+                        <li>✅ Só funciona se "Intermunicipal" também estiver marcado</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Dicas Importantes -->
+            <section id="dicas">
+                <h2>💡 Dicas Importantes</h2>
+
+                <h3>📸 Para Fotos Melhores:</h3>
+                <ul>
+                    <li>✅ Use boa iluminação</li>
+                    <li>✅ Deixe o documento reto</li>
+                    <li>✅ Tire foto de cima (não de lado)</li>
+                    <li>✅ Certifique-se que dá para ler tudo</li>
+                    <li>❌ Evite sombras e reflexos</li>
+                </ul>
+
+                <h3>⚠️ Antes de Enviar:</h3>
+                <ul>
+                    <li>✅ Confira TODOS os dados</li>
+                    <li>✅ Verifique CPF (muito importante!)</li>
+                    <li>✅ Confira data de nascimento</li>
+                    <li>✅ Revise endereço completo</li>
+                    <li>✅ Verifique se os CIDs estão corretos</li>
+                </ul>
+
+                <h3>🔒 Segurança:</h3>
+                <ul>
+                    <li>✅ Não compartilhe seus documentos</li>
+                    <li>✅ Guarde os originais em lugar seguro</li>
+                    <li>✅ Confira os dados antes de enviar</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Precisa de Ajuda -->
+            <section>
+                <h2>📞 Precisa de Ajuda?</h2>
+                <p>Se tiver dúvidas ou problemas:</p>
+                <ol>
+                    <li>Leia esta seção de <strong>Problemas Comuns</strong> novamente</li>
+                    <li>Peça ajuda para quem instalou o programa</li>
+                    <li>Não tente mexer em configurações se não souber!</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <!-- Checklist Rápido -->
+            <section id="checklist">
+                <h2>✅ Checklist Rápido</h2>
+                <p>Antes de começar, certifique-se que tem:</p>
+
+                <ul class="checklist">
+                    <li>Fotos claras de TODOS os documentos obrigatórios</li>
+                    <li>Nome completo do beneficiário</li>
+                    <li>Laudo médico em mãos (para conferir os CIDs)</li>
+                    <li>Tempo para conferir tudo com calma</li>
+                    <li>Internet funcionando</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <div style="text-align: center; padding: 40px 20px;">
+                <h2 style="color: #28a745;">Pronto para começar?</h2>
+                <p style="font-size: 1.2em;">Abra o programa e siga o Passo 1! 🚀</p>
+                <a href="#passo1" class="button">Ir para Passo 1</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Desenvolvido para facilitar sua vida ❤️</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Auto Preenchedor CIPTEA - Novembro 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

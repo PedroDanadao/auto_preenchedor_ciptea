@@ -30,7 +30,7 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 
 ### Passo 1️⃣: Adicionar Documentos
 
-![Tela Inicial - ADICIONAR SCREENSHOT]
+![alt text](guide_images/tela_inicial.png)
 
 1. **Abra o programa** (clique duas vezes no ícone)
 
@@ -53,7 +53,7 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 
 ### Passo 2️⃣: Conferir e Corrigir os Dados
 
-![Tela de Dados - ADICIONAR SCREENSHOT]
+![alt text](guide_images/checagem_de_dados.png)
 
 **O computador vai ler os documentos automaticamente!** Isso pode levar alguns minutos.
 
@@ -63,8 +63,6 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 3. ⏳ Preenche os campos automaticamente
 
 #### Revise TODOS os dados:
-
-![Formulário de Dados - ADICIONAR SCREENSHOT]
 
 **Dados do Responsável:**
 - ✏️ Nome do Responsável
@@ -93,7 +91,7 @@ O computador pode errar na leitura. **Confira tudo com atenção!**
 
 ### Passo 3️⃣: Marcar os CIDs
 
-![Seleção de CIDs - ADICIONAR SCREENSHOT]
+![alt text](guide_images/cids.png)
 
 1. **Role a página para baixo** até ver "CIDs - Selecione todos os aplicáveis"
 
@@ -109,7 +107,7 @@ O computador pode errar na leitura. **Confira tudo com atenção!**
 
 ### Passo 4️⃣: Escolher os Formulários
 
-![Escolha de Formulários - ADICIONAR SCREENSHOT]
+![alt text](guide_images/formularios.png)
 
 Marque quais formulários você quer preencher:
 
@@ -135,7 +133,7 @@ Marque quais formulários você quer preencher:
 
 ### Passo 5️⃣: Preencher os Formulários
 
-![Botão Final - ADICIONAR SCREENSHOT]
+![alt text](guide_images/web_forms.png)
 
 1. **Clique em "Próximo: Preencher Formulários ➜"**
 
@@ -146,8 +144,6 @@ Marque quais formulários você quer preencher:
    - ⏳ Anexar todos os documentos
 
 **Isso pode levar alguns minutos!**
-
-![Navegador Automático - ADICIONAR SCREENSHOT]
 
 3. **Quando aparecer a mensagem "Preenchimento Concluído":**
    - ✅ O navegador vai estar aberto com as páginas
@@ -170,7 +166,7 @@ Marque quais formulários você quer preencher:
 
 ## 🔄 Começar Novo Preenchimento
 
-![Botão Nova Entrada - ADICIONAR SCREENSHOT]
+![alt text](guide_images/nova_entrada.png)
 
 Se você precisa preencher para outra pessoa:
 
@@ -184,7 +180,7 @@ Se você precisa preencher para outra pessoa:
 
 ## 📁 Ver os Documentos Organizados
 
-![Botão Abrir Pasta - ADICIONAR SCREENSHOT]
+![alt text](guide_images/abrir_pasta.png)
 
 Quer ver onde ficaram salvos os documentos?
 

@@ -1,6 +1,7 @@
 data_example.json
 first_test.py
 full_text_example.txt
+/guide_images
 
 .env
 *.env
