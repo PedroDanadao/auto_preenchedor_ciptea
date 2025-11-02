@@ -375,6 +375,43 @@ class AutoPreenchedorUI(QMainWindow):
         header.setLayout(header_layout)
         page_layout.addWidget(header)
         
+        # User Guide link bar (below header)
+        guide_bar = QFrame()
+        guide_bar.setFixedHeight(35)
+        guide_bar.setStyleSheet("background-color: #34495e;")
+        guide_bar_layout = QHBoxLayout()
+        guide_bar_layout.setContentsMargins(15, 0, 15, 0)
+        
+        guide_bar_layout.addStretch()
+        
+        self.user_guide_btn = QPushButton("📖 Guia do Usuário")
+        self.user_guide_btn.setFixedHeight(25)
+        guide_btn_font = QFont('Segoe UI', 9)
+        self.user_guide_btn.setFont(guide_btn_font)
+        self.user_guide_btn.setStyleSheet("""
+            QPushButton {
+                background-color: transparent;
+                color: #3498db;
+                border: none;
+                text-decoration: underline;
+                padding: 2px 10px;
+            }
+            QPushButton:hover {
+                color: #5dade2;
+            }
+            QPushButton:pressed {
+                color: #2874a6;
+            }
+        """)
+        self.user_guide_btn.setCursor(Qt.PointingHandCursor)
+        self.user_guide_btn.clicked.connect(self._open_user_guide)
+        guide_bar_layout.addWidget(self.user_guide_btn)
+        
+        guide_bar_layout.addStretch()
+        
+        guide_bar.setLayout(guide_bar_layout)
+        page_layout.addWidget(guide_bar)
+        
         # Scroll area
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
@@ -1467,6 +1504,21 @@ class AutoPreenchedorUI(QMainWindow):
                 self,
                 "Erro ao Carregar Dados",
                 f"Ocorreu um erro ao carregar os dados de teste:\n\n{str(e)}"
+            )
+    
+    def _open_user_guide(self):
+        """Open the user guide in the default browser."""
+        import webbrowser
+        
+        try:
+            # Open the GitHub Pages URL
+            guide_url = "https://pedrodanadao.github.io/auto_preenchedor_ciptea/"
+            webbrowser.open(guide_url)
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Erro ao Abrir Guia",
+                f"Ocorreu um erro ao abrir o Guia do Usuário:\n\n{str(e)}"
             )
     
     def _open_organized_folder(self):

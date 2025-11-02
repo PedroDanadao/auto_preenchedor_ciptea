@@ -26,7 +26,50 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 
 ---
 
-## 🚀 Passo a Passo
+## � Configurar API Key do Google (Primeira Vez)
+
+**⚠️ IMPORTANTE:** Antes de usar o programa pela primeira vez, você precisa configurar a API Key do Google!
+
+### O que é a API Key?
+
+A API Key é uma chave que permite ao programa usar a Inteligência Artificial do Google para ler os documentos automaticamente.
+
+### Como Obter a API Key:
+
+1. **Acesse:** [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. **Faça login** com sua conta Google
+3. **Clique em "Create API Key"** (Criar Chave de API)
+4. **Copie a chave** gerada (ela parece com: `AIzaSyABC123...`)
+
+### Como Configurar no Programa:
+
+![alt text](guide_images/config_api_key.png)
+
+**Método 1: Pelo Menu (Recomendado)**
+
+1. **Abra o programa**
+2. **Clique com o botão DIREITO** no banner azul escuro no topo da janela
+3. Selecione **"🔑 Configurar API Key"**
+4. **Cole a chave** que você copiou
+5. Clique em **OK**
+
+✅ **Pronto!** A chave foi salva e você pode começar a usar!
+
+**Método 2: Manualmente**
+
+1. Abra a pasta: `C:\Users\SeuNome\.auto_preenchedor_data\`
+2. Crie um arquivo chamado `.env` (se não existir)
+3. Abra o arquivo com Bloco de Notas
+4. Digite: `GOOGLE_API_KEY=sua_chave_aqui`
+5. Salve o arquivo
+
+> **💡 Dica:** Você só precisa fazer isso UMA VEZ! A chave fica salva para sempre.
+
+> **🔒 Segurança:** Nunca compartilhe sua API Key com outras pessoas!
+
+---
+
+## �🚀 Passo a Passo
 
 ### Passo 1️⃣: Adicionar Documentos
 

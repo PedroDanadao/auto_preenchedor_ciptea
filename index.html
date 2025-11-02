@@ -279,6 +279,7 @@
                 <ul>
                     <li><a href="#o-que-e">O que é este programa?</a></li>
                     <li><a href="#documentos">Documentos Necessários</a></li>
+                    <li><a href="#config-api">🔑 Configurar API Key do Google (Primeira Vez)</a></li>
                     <li><a href="#passo-a-passo">Passo a Passo</a>
                         <ul>
                             <li><a href="#passo1">Passo 1: Adicionar Documentos</a></li>
@@ -345,6 +346,63 @@
 
                 <div class="card info">
                     <strong>💡 Dica:</strong> Use o celular para tirar fotos claras dos documentos!
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Configurar API Key -->
+            <section id="config-api">
+                <h2>🔑 Configurar API Key do Google (Primeira Vez)</h2>
+                
+                <div class="card danger">
+                    <strong>⚠️ IMPORTANTE:</strong> Antes de usar o programa pela primeira vez, você precisa configurar a API Key do Google!
+                </div>
+
+                <h3>O que é a API Key?</h3>
+                <p>A API Key é uma chave que permite ao programa usar a Inteligência Artificial do Google para ler os documentos automaticamente.</p>
+
+                <h3>Como Obter a API Key:</h3>
+                <ol>
+                    <li><strong>Acesse:</strong> <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></li>
+                    <li><strong>Faça login</strong> com sua conta Google</li>
+                    <li><strong>Clique em "Create API Key"</strong> (Criar Chave de API)</li>
+                    <li><strong>Copie a chave</strong> gerada (ela parece com: <code>AIzaSyABC123...</code>)</li>
+                </ol>
+
+                <h3>Como Configurar no Programa:</h3>
+
+                <img src="guide_images/config_api_key.png" alt="Configurar API Key">
+
+                <div class="card success">
+                    <h4>Método 1: Pelo Menu (Recomendado)</h4>
+                    <ol>
+                        <li><strong>Abra o programa</strong></li>
+                        <li><strong>Clique com o botão DIREITO</strong> no banner azul escuro no topo da janela</li>
+                        <li>Selecione <strong>"🔑 Configurar API Key"</strong></li>
+                        <li><strong>Cole a chave</strong> que você copiou</li>
+                        <li>Clique em <strong>OK</strong></li>
+                    </ol>
+                    <p style="margin-top: 15px;"><strong>✅ Pronto!</strong> A chave foi salva e você pode começar a usar!</p>
+                </div>
+
+                <div class="card">
+                    <h4>Método 2: Manualmente</h4>
+                    <ol>
+                        <li>Abra a pasta: <code>C:\Users\SeuNome\.auto_preenchedor_data\</code></li>
+                        <li>Crie um arquivo chamado <code>.env</code> (se não existir)</li>
+                        <li>Abra o arquivo com Bloco de Notas</li>
+                        <li>Digite: <code>GOOGLE_API_KEY=sua_chave_aqui</code></li>
+                        <li>Salve o arquivo</li>
+                    </ol>
+                </div>
+
+                <div class="card info">
+                    <strong>💡 Dica:</strong> Você só precisa fazer isso UMA VEZ! A chave fica salva para sempre.
+                </div>
+
+                <div class="card warning">
+                    <strong>🔒 Segurança:</strong> Nunca compartilhe sua API Key com outras pessoas!
                 </div>
             </section>
 
