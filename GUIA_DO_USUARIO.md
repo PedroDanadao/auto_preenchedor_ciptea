@@ -26,7 +26,7 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 
 ---
 
-## � Configurar API Key do Google (Primeira Vez)
+## 🔑 Configurar API Key do Google (Primeira Vez)
 
 **⚠️ IMPORTANTE:** Antes de usar o programa pela primeira vez, você precisa configurar a API Key do Google!
 
@@ -34,7 +34,13 @@ Prepare fotos ou digitalizações dos seguintes documentos:
 
 A API Key é uma chave que permite ao programa usar a Inteligência Artificial do Google para ler os documentos automaticamente.
 
-### Como Obter a API Key:
+> **💡 Nota:** Na maioria dos casos, a API Key já será fornecida para você por quem instalou o programa. Se você já recebeu a chave, pule direto para "Como Configurar no Programa" abaixo.
+
+### Como Obter uma Nova API Key (se necessário):
+
+**Vídeo Tutorial:** [Como criar API Key do Google Gemini](https://www.youtube.com/watch?v=mQq6FRv6XVI)
+
+**Passo a passo:**
 
 1. **Acesse:** [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. **Faça login** com sua conta Google
